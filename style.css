@@ -3,27 +3,64 @@
     margin: 0;
     box-sizing: border-box;
 }
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Roboto+Mono:wght@200&family=Tangerine&display=swap');
+
 body{
-    background-color: pink;
-    display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+    background-color: #FFB6C1;
 }
-.navbar{
-    margin-top: 40px;
-    font-size: 20px;
-    font-weight: 600;
-    font-family: 'Times New Roman', Times, serif;
-    margin-left: -20px;
-}
-i{
-    color: azure;
-    font-size: 30px;
-}
-.pro-container{
-    margin-bottom: 40px;
+#cards{
+display: flex;
+justify-content:space-around;
+flex-wrap: wrap;
+margin-top: 50px;
+height:50%;
+padding: 10px;
 
 }
+.card{
+    width:40%;
+    box-shadow: 0 0 4px 3px yellowgreen;
+    text-align: center;
+    height:500px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: aliceblue;
+    border: none !important;
+    box-shadow: 15px 20px 20px rgb(0, 0,0,.4),
+                inset 4px 4px 10px aliceblue;
+    border-radius: 20px !important;
+    overflow: hidden;
+}
+.card:hover{
+    box-shadow: inset 5px 5px 10px rgb(0, 0,0,.5),
+                inset -4px -4px 10px aliceblue;
+    transition: .4s;
+}
+.images{
+    width: 30%;
+    height: 40%;
+}
+.brand,.price{
+    font-weight: bold;
+    text-transform: capitalize;
+}
+/*  */
+
+i{
+    color: rgb(63, 82, 82);
+    font-size: 30px;
+}
+.navbar{
+    font-size: 25px;
+    text-align:end;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: 'Tangerine', cursive;
+    
+}
+
+
 .form-select{
     background-color: rgb(7, 21, 84);
     height: 50px;
@@ -31,25 +68,26 @@ i{
     color: white;
     width: 20%;
     text-align: center;
-    border-color:#FFB6C1;
     font-size: 13px;
     font-weight: 600;
-    width: 100%;
+    display: flex;
+    width: 50%;
+
 }
 .form-select:hover{
-    background-color:green;
+    background-color:rgb(7, 184, 7);
     color: white;
 }
 .srcbutton{
     background-color:rgb(245, 173, 4);
-    height: 40px;
-    border-radius: 10px;
+    height: 50px;
+    border-radius: 15px;
     color: black;
     width: 10%;
     border-color: #FFB6C1;
     font-size: 15px;
     font-weight: 600;
-    width: 50%;
+    width: 20%;
     margin-right: 10px;
 }
 .srcbutton:hover{
@@ -71,92 +109,68 @@ i{
 .form-select::after{
     background-color: green;
 }
+
 .head-container{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: pink;
+    height: 70px;
+    font-size: x-large;
+    color:  #fbfcfc;
+    background-color: #798592;
+   
 }
 .pro-container{
-    margin-top: 30px;
-    margin-bottom: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: pink;
+    background-color: #FFB6C1;
 }
-.container{
-    height: 100%; 
-    width: 100%;
-    
+/* products */
+
+.name{
+   font-size: 20px;
+   margin-bottom: 10px;
 }
-.makeupbox{
-    width: 300px;
-    margin: 0 auto;
-    text-align: center;
-    background-color: aliceblue;
-    border-radius: 20px;
-    height: 100%;
-}
-.mpproductlist{
-    margin-top: 10px;
-}
-.mpproductbox{
-   margin: 10px;
-}
-.mpproduct{
-    border-radius: 15px;
-    overflow: hidden;
-}
-img{
-   width: 75%;
-    display: block;
-    height: 150px;
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-left: 40px;
-}
-.mpname{
-    padding:10px 10px;
-}
-.mpbrand{
-    padding:10px 10px;
-}
-.mpprice{
-    padding:10px 10px;
-}
-.mpdescription{
-    padding:10px 10px;
-}
-.error1{
-    font-size: 30px;
-    text-align:center;
-    color: red;
-    height: 60px;
+.description{
+    text-align:justify;
+    padding: 10px;
+    font-size:10px;
 }
 
-@media screen and (max-width: 1000px){
-    body{
-        display: block;
+@media (max-width:768px) {
+    
+    .head-container{
+        font-size: 20px;
     }
     .navbar{
-        margin-left: 10px;
+        font-size: 10px;
     }
-    .head-container{
-        margin-top: 30px;
+    i{
+        font-size: 10px;
+    }
+    .card{
+        height: 300px;
+    }
+    .description{
+        padding: 5px;
+        font-size: 5px;
+    }
+    .name{
+        font-size: 10px;
+    }
+    .price{
+        font-size: 10px;
+    }
+    .brand{
+        font-size: 5px;
     }
     .form-select{
-       margin-left: 10px;
-       
-    }
-    .srcbutton{
-        width: 20%;
-    }
-    #txt{
+        margin-left: 10px;
+        
+     }
+     #txt{
         width:50%;
     }
-    
+
 }
-
-
-
