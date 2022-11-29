@@ -10,22 +10,21 @@ navbar.innerHTML=`<blockquote>“Joy is the best makeup. But a little lipstick i
 
 var division2 = document.createElement('div')
 division2.innerHTML=`
-<select class="form-select" id="txt">
+<select class="form-select" id="text">
 <option selected>Choose your Products</option>
-<option id="txt" class="items">blush</option>
-<option id="txt" class="items">bronzer</option>
-<option id="txt" class="items">Eyebrow</option>
-<option id="txt" class="items">eyeliner</option>
-<option id="txt" class="items">eyeshadow</option>
-<option id="txt" class="items1">foundation</option>
-<option id="txt" class="items1">lip liner</option>
-<option id="txt" class="items1">lipstick</option>
-<option id="txt" class="items1">mascara</option>
-<option id="txt" class="items1">nail polish</option>
+<option id="text" class="items">blush</option>
+<option id="text" class="items">bronzer</option>
+<option id="text" class="items">Eyebrow</option>
+<option id="text" class="items">eyeliner</option>
+<option id="text" class="items">eyeshadow</option>
+<option id="text" class="items1">foundation</option>
+<option id="text" class="items1">lip liner</option>
+<option id="text" class="items1">lipstick</option>
+<option id="text" class="items1">mascara</option>
+<option id="text" class="items1">nail polish</option>
 </select>
 <button type="button" class="srcbutton" onClick="srcProducts()">Search</button>
 `;
-//division.setAttribute('id','count')
 document.body.append(division2);
 division2.setAttribute("class","pro-container");
 
@@ -34,7 +33,7 @@ division2.setAttribute("class","pro-container");
 
 async function srcProducts(){
 
-    let product_type = document.getElementById("txt").value //text is input tags id name
+    let product_type = document.getElementById("text").value 
 
 
 
