@@ -1,13 +1,17 @@
+//create a title for the website by using h1 tag in the div tag
 var division1 = document.createElement('div');
-division1.innerHTML =`<h1>M A K E U P - A P I</h1>`;
+division1.innerHTML =`<h1>M A K E U P - A P I</h1>
+`;
 document.body.append(division1);
 division1.setAttribute("class","head-container");
 
+//write quote using blockquote
 var navbar = document.createElement('div')
 document.body.append(navbar);
 navbar.setAttribute("class","navbar")
 navbar.innerHTML=`<blockquote>“Joy is the best makeup. But a little lipstick is a close runner-up.” - <i>Anne Lamott</i></blockquote>`
 
+//creating the input box and search button. Here inputbox have a select option (no need of typing)
 var division2 = document.createElement('div')
 division2.innerHTML=`
 <select class="form-select" id="text">
@@ -24,83 +28,54 @@ division2.innerHTML=`
 <option id="text" class="items1">nail polish</option>
 </select>
 <button type="button" class="srcbutton" onClick="srcProducts()">Search</button>
+</button>
 `;
 document.body.append(division2);
 division2.setAttribute("class","pro-container");
 
+//create the cards
+var cards = document.createElement('div')
+document.body.append(cards);
+cards.setAttribute("id","cards");
 
 
+//give the function for the search button
 
 async function srcProducts(){
 
     let product_type = document.getElementById("text").value 
 
-
-
-    //let result = await fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?${product_type}`)
     let result = await fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${product_type}`)
-
-
     let data = await result.json();
-
+    
+    let input="";
     console.log(data);
-// create container for api website
+
 try {
    
-        
-    
 
 for(i=0;i<data.length;i++){
-var container = document.createElement('div')
-document.body.append(container);
-container.setAttribute("class","container");
 
-var makeupbox = document.createElement('div')
-container.appendChild(makeupbox)
-makeupbox.setAttribute("class","makeupbox");
+input +=`<div class="card">
+<h1 class="name">${data[i].name}</h1>
+<img src="${data[i].api_featured_image}" alt="" class="images">
+<p class="brand">${data[i].brand}</p>
+<p class="price">${data[i].price}</p>
+<p class="description">${data[i].description}</p>
 
-var mpproductlist = document.createElement('div')
-makeupbox.appendChild(mpproductlist)
-mpproductlist.setAttribute("class","mpproductlist");
+</div>
+`
 
-var mpproductbox = document.createElement('div')
-mpproductlist.appendChild(mpproductbox)
-mpproductbox.setAttribute("class","mpproductbox");
-
-var mpproduct = document.createElement('div')
-mpproductbox.appendChild(mpproduct)
-mpproduct.setAttribute("class","mpproduct");
-
-var img = document.createElement('img')
-mpproduct.appendChild(img)
-img.setAttribute("class","img");
-img.src=`${data[i].api_featured_image}`
-
-
-var mpname = document.createElement('h4')
-mpproduct.appendChild(mpname)
-mpname.setAttribute("class","mpname");
-mpname.innerText=`Name:${data[i].name}`;
-
-var mpbrand = document.createElement('h4')
-mpproduct.appendChild(mpbrand)
-mpbrand.setAttribute("class","mpbrand");
-mpbrand.innerHTML =`Brand:${data[i].brand}`
-
-var mpprice = document.createElement('h4')
-mpproduct.appendChild(mpprice)
-mpprice.setAttribute("class","mpprice");
-mpprice.innerHTML = `price:${data[i].price}`;
-
-var mpdescription = document.createElement('small')
-mpproduct.appendChild(mpdescription)
-mpprice.setAttribute("class","mpdescription");
-mpdescription.innerHTML = `<b>Description</b>:${data[i].description}`;
+cards.innerHTML=input;
 
 }
+
 } catch(err){
     console.log("Some error occured"+ err)
+    document.body.innerHTML=`error`;
 }
 
 }
+
+
 
