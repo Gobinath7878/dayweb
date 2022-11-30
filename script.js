@@ -45,7 +45,7 @@ async function srcProducts(){
 
     let product_type = document.getElementById("text").value 
 
-    let result = await fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${product_type}`)
+    let result = await fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${product_type}`)
     let data = await result.json();
     
     let input="";
