@@ -59,9 +59,9 @@ for(i=0;i<data.length;i++){
 input +=`<div class="card">
 <h1 class="name">${data[i].name}</h1>
 <img src="${data[i].api_featured_image}" alt="" class="images">
-<p class="brand">${data[i].brand}</p>
-<p class="price">${data[i].price}</p>
-<p class="description">${data[i].description}</p>
+<p class="brand">Brand:${data[i].brand}</p>
+<p class="price">Price:$${data[i].price}</p>
+<p class="description">Description:${data[i].description}</p>
 
 </div>
 `
